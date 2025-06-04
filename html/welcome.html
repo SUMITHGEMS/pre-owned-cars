@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="../mine project s/css/login.css">
+</head>
+<body>
+  <div class="container" style="text-align: center;">
+    <h2 id="welcome-message">Welcome!</h2>
+    <p id="state-message"></p>
+    <a href="home.html" class="explore-btn">Explore Pre-Owned Cars</a>
+  </div>
+
+  <script>
+    const username = localStorage.getItem('username');
+    const state = localStorage.getItem('selectedState');
+
+    document.getElementById('welcome-message').textContent = `Welcome, ${username}!`;
+    document.getElementById('state-message').textContent = `You're browsing cars in ${state}.`;
+  </script>
+</body>
+</html>

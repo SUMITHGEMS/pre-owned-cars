@@ -1,0 +1,133 @@
+/* ========== RESET ========== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* ========== FORM CONTAINER ========== */
+.container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #222222;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ========== INPUT FIELDS ========== */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #333333;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+  color: #999999;
+  font-size: 15px;
+}
+
+input:focus {
+  border-color: #0066cc;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 102, 204, 0.2);
+}
+
+/* ========== SUBMIT BUTTON ========== */
+input[type="submit"] {
+  background-color: #0066cc;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #004999;
+}
+
+/* ========== STATES SECTION ========== */
+.states {
+  display: none;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #333333;
+}
+
+.states h3 {
+  color: #222222;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* ========== STATE LIST ========== */
+.state-list {
+  list-style: none;
+  padding: 0;
+}
+
+.state-list li {
+  padding: 12px 16px;
+  margin: 8px 0;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  color: #222222;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.state-list li:hover {
+  background-color: #e6f0ff;
+}
+
+/* ========== EXPLORE BUTTON ========== */
+.explore-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #0066cc;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #004999;
+}
+
+/* ========== RESPONSIVE TWEAK ========== */
+@media (max-width: 480px) {
+  .container {
+    margin: 40px 20px;
+    padding: 30px 20px;
+  }
+}

@@ -1,0 +1,251 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Body */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #102f6b;
+  padding: 15px 30px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+header .logo h1 {
+  font-size: 26px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #090909;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #1b1b1c;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  padding: 10px 0;
+  min-width: 220px;
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #102f6b;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(70%);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.hero-content h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+  font-size: 22px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* NAVBAR (sticky) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #102040;
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-logo {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #a9c3ff;
+}
+
+/* CAR BRANDS */
+.brands-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.brand-card {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(16, 47, 107, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(16, 47, 107, 0.3);
+}
+
+.brand-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.brand-card p {
+  color: #102f6b;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ABOUT / CONTACT SECTIONS */
+.info-section {
+  background-color: #0e1b39;
+  padding: 50px 25px;
+  margin: 60px auto;
+  max-width: 900px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.info-section h2 {
+  color: #9bc9ff;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.info-section p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #e4eaff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    background-color: #102040;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    padding: 15px;
+    display: none;
+  }
+
+  .navbar.active .nav-links {
+    display: flex;
+  }
+
+  .hero-content h2 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .brands-container {
+    grid-template-columns: 1fr;
+  }
+}

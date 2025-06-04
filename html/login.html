@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pre-Owned Cars - Login</title>
+  <link rel="stylesheet" href="../mine project s/css/login.css">
+</head>
+<body>
+  <div class="container" id="login-form">
+    <h2>Login to Pre-Owned Cars</h2>
+    <form onsubmit="handleLogin(event)">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div class="states" id="state-page">
+    <h3>Select Your State</h3>
+    <ul class="state-list">
+      <li onclick="goToWelcome('Tamil Nadu')">Tamil Nadu</li>
+      <li onclick="goToWelcome('Karnataka')">Karnataka</li>
+      <li onclick="goToWelcome('Maharashtra')">Maharashtra</li>
+      <li onclick="goToWelcome('Kerala')">Kerala</li>
+      <li onclick="goToWelcome('Andhra Pradesh')">Andhra Pradesh</li>
+      <li onclick="goToWelcome('Telangana')">Telangana</li>
+      <li onclick="goToWelcome('Gujarat')">Gujarat</li>
+      <li onclick="goToWelcome('Rajasthan')">Rajasthan</li>
+      <li onclick="goToWelcome('West Bengal')">West Bengal</li>
+      <li onclick="goToWelcome('Punjab')">Punjab</li>
+    </ul>
+  </div>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+  
+      if (name && email && phone) {
+        localStorage.setItem('username', name);
+        localStorage.setItem('useremail', email);
+        localStorage.setItem('userphone', phone);
+  
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('state-page').style.display = 'block';
+      }
+    }
+  
+    function goToWelcome(state) {
+      // Retrieve stored data
+      const name = localStorage.getItem('username');
+      const email = localStorage.getItem('useremail');
+      const phone = localStorage.getItem('userphone');
+  
+      // Save selected state
+      localStorage.setItem('selectedState', state);
+  
+      // Send data to PHP
+      fetch('php/login.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&state=${encodeURIComponent(state)}`
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log('Saved:', data); // Optional: log success
+        window.location.href = 'welcome.html';
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
+  
+</body>
+</html>

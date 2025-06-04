@@ -1,0 +1,210 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #0e1b39;
+    line-height: 2.0;
+  }
+
+  /* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #102f6b;
+  padding: 15px 30px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+header .logo h1 {
+  font-size: 26px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #102f6b;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #030303;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 10px 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    min-width: 220px;
+    z-index: 100;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px 20px;
+  }
+  
+  .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    transition: background 0.3s;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #102f6b;
+    border-radius: 4px;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    padding: 70px 20px;
+    background: #ffffff;
+    text-align: center;
+  }
+  
+  .contact-container {
+    max-width: 650px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    color: #102f6b;
+  }
+  
+  .contact-container h2 {
+    color: #063064;
+    font-size: 34px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-container p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  .contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .contact-container input,
+  .contact-container textarea {
+    padding: 14px;
+    border: 1px solid #b0c4de;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #111;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact-container input:focus,
+  .contact-container textarea:focus {
+    border-color: #3271bd;
+    box-shadow: 0 0 0 4px rgba(50, 113, 189, 0.15);
+    outline: none;
+  }
+  
+  .contact-container button {
+    background-color: #063064;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .contact-container button:hover {
+    background-color: #090909;
+    transform: translateY(-2px);
+  }
+  
+  .contact-info {
+    margin-top: 25px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      gap: 12px;
+      background-color: #102f6b;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      padding: 15px;
+      display: none;
+      border-radius: 0 0 10px 10px;
+    }
+  
+    .navbar.active .nav-links {
+      display: flex;
+    }
+  
+    .contact-container {
+      padding: 30px 20px;
+    }
+  
+    .contact-container h2 {
+      font-size: 28px;
+    }
+  }
+  
